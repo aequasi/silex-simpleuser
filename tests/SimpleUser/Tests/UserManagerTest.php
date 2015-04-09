@@ -413,6 +413,7 @@ class UserManagerTest extends \PHPUnit_Framework_TestCase
     public function testChangeUserColumns()
     {
         $this->userManager->setUserColumns(array('email' => 'foo'));
-        $this->assertEquals('"foo"', $this->userManager->getUserColumns('email'));
+        $this->assertEquals('foo', $this->userManager->getUserColumns('email'));
+        $this->assertEquals('"foo"',$this->userManager->getUserColumns('email',true));
     }
 }
